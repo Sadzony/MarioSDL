@@ -10,11 +10,14 @@ SDL_Window* g_window = nullptr;
 //functions
 bool InitSDL();
 int ExitSDL();
-
+bool Update();
 int main(int argc, char* args[])
 {
     if (InitSDL()) {
-        SDL_Delay(5000);
+        bool quit = false;
+        while (!quit) {
+            quit = Update();
+        }
     }
     ExitSDL();
     return 0;
@@ -45,4 +48,23 @@ int ExitSDL()
     IMG_Quit();
     SDL_Quit();
     return 0;
+}
+
+bool Update()
+{
+    SDL_Event e;
+    SDL_PollEvent(&e);
+    switch (e.type) {
+    case SDL_QUIT:
+        return true;
+        break;
+    case SDL_KEYUP:
+        switch (e.key.keysym.sym) {
+        case SDLK_q:
+            return true;
+            break;
+        }
+        break;
+    }
+    return false;
 }
