@@ -1,2 +1,6 @@
-﻿  MarioSDL.cpp
+﻿  GameScreenLevel1.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  MarioSDL.cpp
+  Generating Code...
+  LINK : D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe not found or not built by the last incremental link; performing full link
   MarioSDL.vcxproj -> D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe
