@@ -8,6 +8,7 @@
 #ifndef _GAMESCREENMANAGER_H
 #define _GAMESCREENMANAGER_H
 class GameScreen;
+class GameScreenLevel1;
 class GameScreenManager
 {
 private:
