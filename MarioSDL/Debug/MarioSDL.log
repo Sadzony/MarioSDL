@@ -1,4 +1,9 @@
-﻿  MarioSDL.cpp
-  Texture2D.cpp
+﻿  Character.cpp
+  CharacterLuigi.cpp
+  CharacterMario.cpp
+  GameScreenLevel1.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  GameScreenManager.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Generating Code...
   MarioSDL.vcxproj -> D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe
