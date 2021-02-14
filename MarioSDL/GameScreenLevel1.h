@@ -1,12 +1,17 @@
 #pragma once
 #include "GameScreen.h"
 #include "Commons.h"
+#include "CharacterMario.h"
+#include "CharacterLuigi.h"
 #ifndef _GAMESCREENLEVEL1_H
 #define _GAMESCREENLEVEL1_H
+class Character;
 class GameScreenLevel1 :
     public GameScreen
 {
 private:
+    CharacterMario* mario;
+    CharacterLuigi* luigi;
     Texture2D* m_background_texture;
     bool SetUpLevel();
 public:
