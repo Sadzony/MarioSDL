@@ -23,3 +23,12 @@ enum FACING {
 	FACING_LEFT,
 	FACING_RIGHT
 };
+struct Rect2D {
+	float x, y, _width, _height;
+	Rect2D(float x_pos, float y_pos, float width, float height) {
+		x = x_pos;
+		y = y_pos;
+		_width = width;
+		_height = height;
+	}
+};
