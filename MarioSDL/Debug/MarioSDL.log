@@ -1,2 +1,16 @@
-﻿  LINK : D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe not found or not built by the last incremental link; performing full link
+﻿  Character.cpp
+  CharacterLuigi.cpp
+  CharacterMario.cpp
+  GameScreenLevel1.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  GameScreenManager.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  MarioSDL.cpp
+  Texture2D.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Texture2D.cpp(48,42): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Texture2D.cpp(48,42): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Texture2D.cpp(48,57): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Texture2D.cpp(48,57): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  LINK : D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe not found or not built by the last incremental link; performing full link
   MarioSDL.vcxproj -> D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe
