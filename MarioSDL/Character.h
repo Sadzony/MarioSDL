@@ -7,10 +7,12 @@
 #include <SDL_mixer.h>
 #include <string>
 #include "Texture2D.h"
+#include "Circle2D.h"
 class Texture2D;
 class Character
 {
 protected:
+	Circle2D* collider;
 	SDL_Renderer* m_renderer;
 	Vector2D m_position;
 	Texture2D* m_texture;
