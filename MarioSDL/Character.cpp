@@ -8,12 +8,14 @@ void Character::MoveRight(float deltaTime)
 {
 	m_faceDirection = FACING_RIGHT;
 	m_position.x += deltaTime * MARIO_SPEED;
+	collider->SetPosition(m_position.x, m_position.y);
 }
 void Character::AddGravity(float deltaTime)
 {
 	if (m_position.y + m_texture->GetHeight() < SCREEN_HEIGHT && !m_jumping) {
 		m_can_jump = false;
 		m_position.y += GRAVITY * deltaTime;
+		collider->SetPosition(m_position.x, m_position.y);
 	}
 	else if(!(m_position.y + m_texture->GetHeight() < SCREEN_HEIGHT) && !m_jumping){
 		m_jump_force = JUMP_FORCE;
@@ -22,6 +24,7 @@ void Character::AddGravity(float deltaTime)
 }
 Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position)
 {
+	collider = new Circle2D(CHARACTER_RADIUS, start_position.x, start_position.y);
 	m_faceDirection = FACING_RIGHT;
 	m_renderer = renderer;
 	m_position = start_position;
