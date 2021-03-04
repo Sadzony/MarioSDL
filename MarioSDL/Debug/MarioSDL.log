@@ -1,14 +1,2 @@
-﻿  Character.cpp
-  CharacterLuigi.cpp
-  CharacterMario.cpp
-  Circle2D.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Circle2D.cpp(26,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Collider.cpp
-  GameScreenLevel1.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  GameScreenManager.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Rect2D.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Rect2D.cpp(16,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
+﻿  LevelMap.cpp
   MarioSDL.vcxproj -> D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe

@@ -1,5 +1,5 @@
 #include "CharacterMario.h"
-CharacterMario::CharacterMario(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position) : Character(renderer, imagePath, start_position) {
+CharacterMario::CharacterMario(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position, LevelMap* map) : Character(renderer, imagePath, start_position, map) {
 	m_faceDirection = FACING_RIGHT;
 	m_renderer = renderer;
 	m_position = start_position;
@@ -48,12 +48,21 @@ void CharacterMario::Update(float deltaTime, SDL_Event e)
 	else if (movingRight) {
 		MoveRight(deltaTime);
 	}
-	AddGravity(deltaTime);
+	int centralXposition = (int)(m_position.x + (m_texture->GetWidth() * 0.5f)) / TILE_WIDTH;
+	int foot_position = (int)(m_position.y + m_texture->GetHeight()) / TILE_HEIGHT;
+	if (m_current_level_map->GetTileAt(foot_position, centralXposition) == 0) {
+		AddGravity(deltaTime);
+	}
+	else {
+		m_can_jump = true;
+	}
+	
 	if (m_jumping) {
 		m_position.y -= m_jump_force * deltaTime;
 		m_jump_force -= JUMP_FORCE_DECREMENT * deltaTime;
 		if (m_jump_force <= 0.0f) {
 			m_jumping = false;
+			m_jump_force = JUMP_FORCE;
 		}
 	}
 }

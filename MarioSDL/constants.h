@@ -1,8 +1,12 @@
 #pragma once
 #define SCREEN_WIDTH 512
-#define SCREEN_HEIGHT 416
-#define MARIO_SPEED 50.0f
+#define SCREEN_HEIGHT 412
+#define MARIO_SPEED 100.0f
 #define GRAVITY 300
 #define JUMP_FORCE 700.0f
 #define JUMP_FORCE_DECREMENT 1800.0f
 #define CHARACTER_RADIUS 15.0f
+#define MAP_WIDTH 16
+#define MAP_HEIGHT 13
+#define TILE_WIDTH 32
+#define TILE_HEIGHT 32

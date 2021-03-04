@@ -8,10 +8,12 @@
 #include <string>
 #include "Texture2D.h"
 #include "Circle2D.h"
+#include "LevelMap.h"
 class Texture2D;
 class Character
 {
 protected:
+	LevelMap* m_current_level_map;
 	Circle2D* collider;
 	SDL_Renderer* m_renderer;
 	Vector2D m_position;
@@ -26,7 +28,7 @@ protected:
 	virtual void MoveRight(float deltaTime);
 	virtual void AddGravity(float deltaTime);
 public:
-	Character(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position);
+	Character(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position, LevelMap* map);
 	~Character();
 
 	virtual void Render();
