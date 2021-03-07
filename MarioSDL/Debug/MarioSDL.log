@@ -1,2 +1,13 @@
-﻿  LevelMap.cpp
+﻿  PowBlock.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(14,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(15,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(32,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(33,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(33,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(33,62): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(33,62): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(34,90): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(34,90): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(34,109): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\PowBlock.cpp(34,109): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   MarioSDL.vcxproj -> D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe
