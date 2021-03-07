@@ -51,6 +51,45 @@ void Character::Update(float deltaTime, SDL_Event e)
 
 }
 
+void Character::JumpCalculations(float deltaTime)
+{
+	int leftXposition = (int)(m_position.x) / TILE_WIDTH;
+	int rightXposition = (int)(m_position.x + m_texture->GetWidth()) / TILE_WIDTH;
+	int foot_position = (int)(m_position.y + m_texture->GetHeight()) / TILE_HEIGHT;
+	if (m_current_level_map->GetTileAt(foot_position, leftXposition) == 0 && m_current_level_map->GetTileAt(foot_position, rightXposition) == 0) {
+		AddGravity(deltaTime);
+	}
+	else { //if im colliding with the map
+
+		int remainder = ((int)m_position.y + m_texture->GetHeight()) % 32; //check if foot pos is a multiple of 32
+
+		if (remainder != 0 && !m_jumping) { //if its not, that means we're inside tile.
+			int Xremainder = ((int)m_position.x) % 32; //calculate remainder of X position
+			if (m_current_level_map->GetTileAt(foot_position, leftXposition) == 1) {	//push left or right depending on direction
+				m_position.x = (int)m_position.x + 32 - Xremainder;
+
+			}
+			else if (m_current_level_map->GetTileAt(foot_position, rightXposition) == 1) {
+				m_position.x = (int)m_position.x - 32 - Xremainder + m_texture->GetWidth();
+			}
+			AddGravity(deltaTime); //since we're not on tile, add gravity again.
+		}
+		else {
+
+			m_can_jump = true;
+		}
+	}
+
+	if (m_jumping) {
+		m_position.y -= m_jump_force * deltaTime;
+		m_jump_force -= JUMP_FORCE_DECREMENT * deltaTime;
+		if (m_jump_force <= 0.0f) {
+			m_jumping = false;
+			m_jump_force = JUMP_FORCE;
+		}
+	}
+}
+
 void Character::SetPosition(Vector2D new_position)
 {
 	m_position = new_position;

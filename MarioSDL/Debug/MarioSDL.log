@@ -1,2 +1,11 @@
-﻿  LevelMap.cpp
+﻿  Character.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(69,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(73,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  CharacterLuigi.cpp
+  CharacterMario.cpp
+  GameScreenLevel1.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  GameScreenManager.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
   MarioSDL.vcxproj -> D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe
