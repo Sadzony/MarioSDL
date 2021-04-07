@@ -1,13 +1,13 @@
 #include "Character.h"
-void Character::MoveLeft(float deltaTime)
+void Character::MoveLeft(float deltaTime, float speed)
 {
 	m_faceDirection = FACING_LEFT;
-	m_position.x -= deltaTime * MARIO_SPEED;
+	m_position.x -= deltaTime * speed;
 }
-void Character::MoveRight(float deltaTime)
+void Character::MoveRight(float deltaTime, float speed)
 {
 	m_faceDirection = FACING_RIGHT;
-	m_position.x += deltaTime * MARIO_SPEED;
+	m_position.x += deltaTime * speed;
 }
 void Character::AddGravity(float deltaTime)
 {
@@ -19,7 +19,7 @@ void Character::AddGravity(float deltaTime)
 Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position, LevelMap* map)
 {
 	m_current_level_map = map;
-	
+	isAlive = true;
 	m_faceDirection = FACING_RIGHT;
 	m_renderer = renderer;
 	m_position = start_position;
@@ -27,7 +27,7 @@ Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D sta
 	if (m_texture->LoadFromFile(imagePath) == false) {
 		std::cerr << "Image could not be loaded from " << imagePath << std::endl;
 	}
-	collider = new Rect2D(m_texture->GetWidth(), m_texture->GetHeight(), start_position.x, start_position.y);
+	collider = new Rect2D(32, m_texture->GetHeight(), start_position.x, start_position.y);
 }
 
 Character::~Character()
@@ -53,11 +53,11 @@ void Character::Update(float deltaTime, SDL_Event e)
 void Character::JumpCalculations(float deltaTime)
 {
 	int leftXposition = (int)(m_position.x) / TILE_WIDTH;
-	int rightXposition = (int)(m_position.x + m_texture->GetWidth()) / TILE_WIDTH;
+	int rightXposition = (int)(m_position.x + 32) / TILE_WIDTH;
 	int foot_position = (int)(m_position.y + m_texture->GetHeight()) / TILE_HEIGHT;
-	int centralXposition = ((int)(m_position.x) + (m_texture->GetWidth() * 0.5f)) / TILE_WIDTH;
+	int centralXposition = ((int)(m_position.x) + (32 * 0.5f)) / TILE_WIDTH;
 	if (m_current_level_map->GetTileAt(foot_position, centralXposition) == 2) {
-		if (m_position.x > (SCREEN_WIDTH * 0.5f) + 8 || m_position.x + m_texture->GetWidth() < (SCREEN_WIDTH * 0.5f) - 8) {
+		if (m_position.x > (SCREEN_WIDTH * 0.5f) + 8 || m_position.x + 32 < (SCREEN_WIDTH * 0.5f) - 8) {
 			AddGravity(deltaTime);
 		}
 		else{ //if im colliding with pow
@@ -97,7 +97,7 @@ void Character::JumpCalculations(float deltaTime)
 
 			}
 			else if (m_current_level_map->GetTileAt(foot_position, rightXposition) == 1) {
-				m_position.x = (int)m_position.x - 32 - Xremainder + m_texture->GetWidth();
+				m_position.x = (int)m_position.x - 32 - Xremainder + 32;
 			}
 			AddGravity(deltaTime); //since we're not on tile, add gravity again.
 		}

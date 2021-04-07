@@ -13,6 +13,7 @@ class Texture2D;
 class Character
 {
 protected:
+	bool isAlive;
 	LevelMap* m_current_level_map;
 	Rect2D* collider;
 	SDL_Renderer* m_renderer;
@@ -24,8 +25,8 @@ protected:
 	bool m_jumping = false;
 	bool m_can_jump = false;
 	float m_jump_force = JUMP_FORCE;
-	virtual void MoveLeft(float deltaTime);
-	virtual void MoveRight(float deltaTime);
+	virtual void MoveLeft(float deltaTime, float speed);
+	virtual void MoveRight(float deltaTime, float speed);
 	virtual void AddGravity(float deltaTime);
 public:
 	Character(SDL_Renderer* renderer, std::string imagePath, Vector2D start_position, LevelMap* map);
@@ -38,5 +39,7 @@ public:
 	void SetPosition(Vector2D new_position);
 	Rect2D* GetCollider() { return collider; }
 	Vector2D GetPosition();
+	bool GetAlive() { return isAlive; };
+	void SetAlive(bool newVal) { isAlive = newVal; };
 };
 
