@@ -1,25 +1,9 @@
 ﻿  Character.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(69,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(73,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  CharacterLuigi.cpp
-  CharacterMario.cpp
-  Circle2D.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Circle2D.cpp(26,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  GameScreen.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  GameScreenLevel1.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  GameScreenManager.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\GameScreen.h(8,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  LevelMap.cpp
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(30,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(58,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(96,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(100,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(123,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   MarioSDL.cpp
-  Rect2D.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Rect2D.cpp(16,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Texture2D.cpp
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Texture2D.cpp(48,42): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Texture2D.cpp(48,42): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Texture2D.cpp(48,57): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Texture2D.cpp(48,57): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Generating Code...
-  LINK : D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe not found or not built by the last incremental link; performing full link
   MarioSDL.vcxproj -> D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe

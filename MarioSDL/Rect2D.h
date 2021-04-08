@@ -1,6 +1,7 @@
 #pragma once
 #include "Collider.h"
 #include "Circle2D.h"
+#include <string>
 class Rect2D : public Collider {
 public:
 	float _width, _height;

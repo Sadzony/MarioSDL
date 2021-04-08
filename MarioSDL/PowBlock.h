@@ -18,6 +18,7 @@ public:
 	Rect2D* GetCollisionBox() { return collider; };
 	void TakeHit();
 	bool isAvailable() { return num_hits_left > 0; }
+	Vector2D GetPosition() { return m_position; }
 private:
 	SDL_Renderer* m_renderer;
 	Vector2D m_position;

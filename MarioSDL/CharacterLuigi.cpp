@@ -43,10 +43,12 @@ void CharacterLuigi::Update(float deltaTime, SDL_Event e)
 		}
 	}
 	if (movingLeft) {
-		MoveLeft(deltaTime);
+		MoveLeft(deltaTime, MARIO_SPEED);
 	}
 	else if (movingRight) {
-		MoveRight(deltaTime);
+		MoveRight(deltaTime, MARIO_SPEED);
 	}
 	JumpCalculations(deltaTime);
+	HeadCollision(deltaTime);
+	collider->SetPosition(m_position.x, m_position.y);
 }
