@@ -4,4 +4,6 @@ D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(58,23): war
 D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(96,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(100,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\Programming\Games Engine Creation\MarioSDL\MarioSDL\Character.cpp(123,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  MarioSDL.cpp
+  Generating Code...
   MarioSDL.vcxproj -> D:\Programming\Games Engine Creation\MarioSDL\Debug\MarioSDL.exe
