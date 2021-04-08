@@ -69,6 +69,11 @@ void CharacterKoopa::Update(float deltaTime, SDL_Event e)
 		else if (m_faceDirection == FACING_RIGHT) {
 			MoveRight(deltaTime, KOOPA_SPEED);
 		}
+		int foot_position = (int)(m_position.y + m_texture->GetHeight()) / TILE_HEIGHT;
+		int centralXposition = ((int)(m_position.x) + (32 * 0.5f)) / TILE_WIDTH;
+		if (m_current_level_map->GetTileAt(foot_position, centralXposition) == 3) {
+			TakeDamage();
+		}
 	}
 	else {
 		m_injured_time -= deltaTime;

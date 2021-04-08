@@ -49,5 +49,6 @@ void CharacterLuigi::Update(float deltaTime, SDL_Event e)
 		MoveRight(deltaTime, MARIO_SPEED);
 	}
 	JumpCalculations(deltaTime);
+	HeadCollision(deltaTime);
 	collider->SetPosition(m_position.x, m_position.y);
 }

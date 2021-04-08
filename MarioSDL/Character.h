@@ -35,6 +35,7 @@ public:
 	virtual void Render();
 	virtual void Update(float deltaTime, SDL_Event e);
 	void JumpCalculations(float deltaTime);
+	void HeadCollision(float deltaTime);
 	void CancelJump();
 	void SetPosition(Vector2D new_position);
 	Rect2D* GetCollider() { return collider; }

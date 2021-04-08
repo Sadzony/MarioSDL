@@ -14,6 +14,7 @@ class GameScreenLevel1 :
     public GameScreen
 {
 private:
+    float timeToRevertBlock;
     float spawnRate;
     float timeTillNextSpawn;
     void DoScreenShake();

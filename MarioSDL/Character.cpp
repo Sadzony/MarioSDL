@@ -117,6 +117,19 @@ void Character::JumpCalculations(float deltaTime)
 	}
 }
 
+void Character::HeadCollision(float deltaTime)
+{
+	int headPosition = (int)((m_position.y) / TILE_HEIGHT);
+	int centralXposition = ((int)(m_position.x) + (32 * 0.5f)) / TILE_WIDTH;
+	if (m_current_level_map->GetTileAt(headPosition, centralXposition) == 1) {
+		if (m_jumping) {
+			m_current_level_map->ChangeTileAt(headPosition, centralXposition, 3);
+			CancelJump();
+		}
+	}
+
+}
+
 void Character::CancelJump()
 {
 	m_jumping = false;

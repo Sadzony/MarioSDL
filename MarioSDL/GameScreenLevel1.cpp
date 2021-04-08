@@ -2,6 +2,7 @@
 
 GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer)
 {
+	timeToRevertBlock = 0.2f;
 	spawnRate = SPAWN_RATE;
 	timeTillNextSpawn = 0.0f;
 	m_level_map = nullptr;
@@ -69,8 +70,8 @@ void GameScreenLevel1::SetLevelMap()
 void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 {
 	if (!m_enemies.empty()) {
-		int enemyIndexToDelete = -1;
 		for (unsigned int i = 0; i < m_enemies.size(); i++) {
+			int enemyIndexToDelete = -1;
 			if (m_enemies[i]->GetPosition().y > 300.0f) {
 				if (m_enemies[i]->GetPosition().x < (float)(-m_enemies[i]->GetCollider()->_width * 0.5f) ||
 					m_enemies[i]->GetPosition().x > SCREEN_WIDTH - (float)(m_enemies[i]->GetCollider()->_width * 0.5f)) {
@@ -133,11 +134,22 @@ void GameScreenLevel1::Render()
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 {
+	for (int i = 0; i < MAP_HEIGHT; i++) {
+		for (int k = 0; k < MAP_WIDTH; k++) {
+			if (m_level_map->GetTileAt(i, k) == 3) {
+				timeToRevertBlock -= deltaTime;
+				if (timeToRevertBlock <= 0.0f) {
+					timeToRevertBlock = 0.2f;
+					m_level_map->ChangeTileAt(i, k, 1);
+				}
+			}
+		}
+	}
 	timeTillNextSpawn -= deltaTime;
 	if (timeTillNextSpawn <= 0.0f) {
 		timeTillNextSpawn = spawnRate;
-		CreateKoopa(Vector2D(150, 32), FACING_RIGHT, KOOPA_SPEED);
-		CreateKoopa(Vector2D(325, 32), FACING_LEFT, KOOPA_SPEED);
+		CreateKoopa(Vector2D(120, 32), FACING_RIGHT, KOOPA_SPEED);
+		CreateKoopa(Vector2D(355, 32), FACING_LEFT, KOOPA_SPEED);
 	}
 	if (m_screenshake) {
 		m_shake_time -= deltaTime;
